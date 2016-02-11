@@ -1,0 +1,25 @@
+{
+  "name": "outages",
+  "version": "1.0.0",
+  "description": "Gathers data for North Carolina power outages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "power",
+    "outages",
+    "winter",
+    "storm"
+  ],
+  "author": "Seth Wright",
+  "license": "ISC",
+  "devDependencies": {
+    "curlrequest": "^0.5.4",
+    "xml-parser": "^1.2.1"
+  },
+  "dependencies": {
+    "file": "^0.2.2",
+    "lodash": "^4.3.0"
+  }
+}

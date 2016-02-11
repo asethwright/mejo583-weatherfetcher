@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div ng-app="weather">
+      <table class="table table-bordered" ng-controller="WeatherController as weatherCtrl">
+        <tr>
+          <th>State</th>
+          <th>Service Area</th>
+          <th>Outages</th>
+          <th>Customers</th>
+          <th>% Effected</th>
+        </tr>
+        <tr ng-repeat="county in weatherCtrl.counties | orderBy: '-total_custs'">
+          <td>{{ weatherCtrl.state(county) }}</td>
+          <td>{{ weatherCtrl.area(county) }}</td>
+          <td>{{ county['custs_out'] }}</td>
+          <td>{{ county['total_custs'] }}</td>
+          <td>{{ weatherCtrl.outage_percent(county) }}</td>
+        </tr>
+    </table>
+  </body>
+</html>
